@@ -17,8 +17,6 @@ public class RemovingConditional {
         list.removeIf(predicate);
         System.out.println(list); // [Richard]
         
-        
-        
     }
 
 }
