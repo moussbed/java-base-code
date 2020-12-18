@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.UnaryOperator;
 
 public class TestConsumer {
 
@@ -29,6 +30,9 @@ public class TestConsumer {
 
         methodClassAnonym.accept(list); // [112, 90, 68, 20, 4]
         System.out.println(list);
+
+       // list.replaceAll((integer -> 2*integer)); // That is better to multiply by two
+        //System.out.println(list);
 
         Consumer<String> stringConsumer = System.out::println;
         stringConsumer.accept("Hello Word !"); // Hello Word !

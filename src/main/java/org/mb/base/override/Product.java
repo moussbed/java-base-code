@@ -3,6 +3,7 @@ package org.mb.base.override;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -88,7 +89,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return  ToStringBuilder.reflectionToString(this);
+        return  ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
     }
 
     @Override
