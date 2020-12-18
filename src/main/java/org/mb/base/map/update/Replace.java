@@ -11,13 +11,14 @@ public class Replace {
         //Replace existing value unconditionally
         map.put("key1", "Bedroll");
         map.put("key1", "Moussaka's");
-        System.out.println(map); //{key1=Moussakat}
+        System.out.println(map);// {key1=Moussaka's}
 
         // Replace existing value with condition
         map.put("key2", "Anna");
         map.put("key3", null);
         map.putIfAbsent("key2", "Sidoine");
         map.putIfAbsent("key4", "Eyala");
-        System.out.println(map);
+        map.put("key3", "Tomy");
+        System.out.println(map); // {key1=Moussaka's, key2=Anna, key3=Tomy, key4=Eyala}
     }
 }
