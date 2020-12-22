@@ -20,6 +20,21 @@ public class TestPredicat {
         order(product,(product1 -> product.isAvailable())); // Order this product
         order(product,(product1 -> product.isPromotion()));
 
+        //This works, but it’s not great
+        Predicate<String> brownEggs = s -> s.contains("egg") && s.contains("brown");
+        Predicate<String> otherEggs = s -> s.contains("egg") && ! s.contains("brown");
+
+        //great
+        Predicate<String> egg = s -> s.contains("egg");
+        Predicate<String> brow = s -> s.contains("brow");
+        Predicate<String> browAndEgg = egg.and(brow);
+        Predicate<String> browOrEgg = egg.or(brow);
+
+        String maChaine= "I buy fish and brow";
+
+        System.out.println(browAndEgg.test(maChaine)); // false
+        System.out.println(browOrEgg.test(maChaine)); // true
+
 
     }
 }
