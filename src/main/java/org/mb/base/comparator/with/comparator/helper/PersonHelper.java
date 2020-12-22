@@ -46,9 +46,13 @@ public class PersonHelper {
         System.out.println(personList); // [Person{id=5, name='Aicha'}, Person{id=5, name='Aïcha'}, Person{id=20, name='Aïcha'}, Person{id=0, name='Dominique'}, Person{id=4, name='Kone'}]
 
         // Sort using multifield without Collections Api
-        personList.sort(PersonHelper.comparatorMultiField);
+        personList.sort(PersonHelper::getComparatorMultiField);
         System.out.println(personList);// [Person{id=5, name='Aicha'}, Person{id=5, name='Aïcha'}, Person{id=20, name='Aïcha'}, Person{id=0, name='Dominique'}, Person{id=4, name='Kone'}]
 
 
+    }
+
+    private static int getComparatorMultiField(Person p1, Person p2) {
+        return comparatorMultiField.compare(p1,p2);
     }
 }
