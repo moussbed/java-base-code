@@ -82,16 +82,16 @@ public class TerminalOperationStreams {
         StringBuilder collect = streamw.collect(StringBuilder::new, StringBuilder::append, StringBuilder::append);
         System.out.println(collect);
 
-        Stream<String> streame = Stream.of("w", "o", "l", "f","t","l");
-        TreeSet<String> set = streame.collect(TreeSet::new, TreeSet::add, TreeSet::addAll);
+        Stream<String> streams = Stream.of("w", "o", "l", "f","t","l");
+        TreeSet<String> set = streams.collect(TreeSet::new, TreeSet::add, TreeSet::addAll);
         System.out.println(set); // [f, l, o, t, w]
 
-        Stream<String> streamee = Stream.of("w", "o", "l", "f");
-        TreeSet<String> set1 = streamee.collect(Collectors.toCollection(TreeSet::new));
+        Stream<String> streamer = Stream.of("w", "o", "l", "f");
+        TreeSet<String> set1 = streamer.collect(Collectors.toCollection(TreeSet::new));
         System.out.println(set1); // [f, l, o, w]
 
-        Stream<String> streameee = Stream.of("w", "o", "l", "f");
-        Set<String> set2 = streameee.collect(Collectors.toSet());
+        Stream<String> streamers = Stream.of("w", "o", "l", "f");
+        Set<String> set2 = streamers.collect(Collectors.toSet());
         System.out.println(set2); // [f, w, l, o]
 
     }
