@@ -35,7 +35,7 @@ public class IntermediateOperations {
         List<String> two = Arrays.asList("Mama Gorilla", "Baby Gorilla");
         Stream<List<String>> animals = Stream.of(zero, one, two);
         List<String> stringList = animals.flatMap(l -> l.stream()).collect(Collectors.toList());
-        System.out.println(stringList);//[Bonobo, Mama Gorilla, Baby Gorilla]s
+        System.out.println(stringList);//[Bonobo, Mama Gorilla, Baby Gorilla]
 
         // sorted()
         Stream<String> s = Stream.of("brown bear-", "grizzly-", "12Arr");
