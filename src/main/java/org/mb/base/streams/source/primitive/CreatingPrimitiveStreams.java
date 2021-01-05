@@ -1,11 +1,14 @@
 package org.mb.base.streams.source.primitive;
 
+import java.util.IntSummaryStatistics;
+import java.util.OptionalDouble;
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
-import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
 public class CreatingPrimitiveStreams {
+
+
 
     public static void main(String[] args) {
 
@@ -14,6 +17,20 @@ public class CreatingPrimitiveStreams {
          *   LongStream: Used for the primitive type long
          *   DoubleStream: Used for the primitive types double and float
          */
+
+        Stream<Integer> stream = Stream.of(1, 2, 3);
+        IntStream intStream2 = stream.mapToInt(x -> x); // Convertion du Stream<Integer> en IntStream
+        OptionalDouble average = intStream2.average(); // Calculate average
+       // System.out.println(average.getAsDouble());
+        average.ifPresent(System.out::println);
+
+        // Not only is it possible to calculate the average, but it is also easy to do so. Clearly primitive streams are important.
+        IntStream intStream1 = IntStream.of(1,34,67);
+        OptionalDouble average1 = intStream1.average();
+       // System.out.println(average1.getAsDouble());
+        average1.ifPresent(System.out::println);
+
+
 
         DoubleStream empty = DoubleStream.empty();
         empty.forEach(System.out::println);
@@ -46,7 +63,12 @@ public class CreatingPrimitiveStreams {
         Stream<String> objStream = Stream.of("penguin", "fish");
         IntStream intStream = objStream.mapToInt(s -> s.length());
         intStream.forEach(System.out::print);//74
-        
+
+        // Summarizing Statistics
+        System.out.println();
+        IntStream intStream3 = IntStream.of(12,10,9,17,19,15);
+        IntSummaryStatistics intSummaryStatistics = intStream3.summaryStatistics();
+        System.out.println("Count = " + intSummaryStatistics.getCount() + " Average = " +intSummaryStatistics.getAverage() + " Sum = " + intSummaryStatistics.getSum() + " Max = " +intSummaryStatistics.getMax() + " Min = " +intSummaryStatistics.getMin());
 
     }
 }
