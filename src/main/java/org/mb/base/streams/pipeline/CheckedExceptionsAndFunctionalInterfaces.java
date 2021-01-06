@@ -2,6 +2,7 @@ package org.mb.base.streams.pipeline;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class CheckedExceptionsAndFunctionalInterfaces {
@@ -18,7 +19,7 @@ public class CheckedExceptionsAndFunctionalInterfaces {
 
     private static List<String> createSafe(){
         try {
-            return CheckedExceptionsAndFunctionalInterfaces.create()
+            return CheckedExceptionsAndFunctionalInterfaces.create();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -32,7 +33,7 @@ public class CheckedExceptionsAndFunctionalInterfaces {
 
 
         // Now what about this one when i use reference method
-        Supplier<List<String>> create = CheckedExceptionsAndFunctionalInterfaces::create;
+        //  Supplier<List<String>> create = CheckedExceptionsAndFunctionalInterfaces::create;
         // DOES NOT COMPILE, The actual compiler error is :  Unhandled exception: java.io.IOException
 
         // The problem is that the lambda to which this method reference expands does declare an exception.
