@@ -22,6 +22,6 @@ public class ReviewingString {
         s.insert(1, '-').delete(3, 4);
         System.out.println(s); //a-bde
         System.out.println(s.substring(2, 4)); // bd
-        
+
     }
 }
