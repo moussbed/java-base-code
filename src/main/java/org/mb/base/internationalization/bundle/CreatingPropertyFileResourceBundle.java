@@ -60,6 +60,11 @@ public class CreatingPropertyFileResourceBundle {
         System.out.println(properties.getProperty("notReallyAProperty", "123")); // The second prints 123, since the property wasn’t found.
         System.out.println(properties.getProperty("name")); // Vancouver Zoo
 
+       // Locale.setDefault(new Locale("hi"));
+        ResourceBundle resourceBundle2 = ResourceBundle.getBundle("Zoo"); // Get default locale
+        System.out.println(resourceBundle2.getString("hello")); // Bonjour
+        System.out.println(resourceBundle2.getString("visitor"));
+
 
     }
 }
