@@ -1,4 +1,4 @@
-package org.mb.base.internationalization;
+package org.mb.base.internationalization.bundle;
 
 import java.text.MessageFormat;
 import java.util.ResourceBundle;
