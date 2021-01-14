@@ -8,7 +8,7 @@ import java.time.temporal.ChronoUnit;
 import java.util.stream.Stream;
 
 public class WorkingWithInstants {
-    
+
 
     // The Instant class represents a specific moment in time in the GMT time zone. Suppose that you want to run a timer:
     public static void main(String[] args) {
