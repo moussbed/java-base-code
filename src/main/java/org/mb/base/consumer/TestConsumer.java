@@ -1,5 +1,8 @@
 package org.mb.base.consumer;
 
+import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.commons.lang3.RandomUtils;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -9,6 +12,8 @@ import java.util.function.UnaryOperator;
 public class TestConsumer {
 
     public static void main(String[] args) {
+
+        System.out.println(RandomStringUtils.random(9, false, true));
         Consumer<List<Integer>> methodLambda = (List<Integer> l) -> Collections.sort(l);
         Consumer<List<Integer>> methodRef = Collections::reverse;
         Consumer<List<Integer>> methodClassAnonym = new Consumer<List<Integer>>() {
