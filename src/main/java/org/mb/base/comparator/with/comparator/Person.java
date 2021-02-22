@@ -62,6 +62,8 @@ public class Person {
         Comparator<Person> personComparator = (Person p1, Person p2) -> Long.compare(p1.getId(), p2.getId());
         Collections.sort(personList,personComparator); //
         System.out.println(personList);// [Person{id=0, name='Rick'}, Person{id=2, name='Henry'}, Person{id=10, name='Nana'}]
+        System.out.println(Collections.max(personList, personComparator));
+
 
 
     }
